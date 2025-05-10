@@ -1742,3 +1742,7 @@ section#contact iframe {
 body {
   overflow-x: hidden;
 }
+.container {
+  width: 100%;
+  max-width: 100%;
+}
