@@ -1693,11 +1693,13 @@ section#contact iframe {
     }
 }
 
+.fixed-mobile-cta {
+  display: none;
+}
+/* Show & position only on screens ≤768px */
 @media (max-width: 768px) {
   .fixed-mobile-cta {
-    transition: background-color var(--transition-normal);
-    overflow: hidden;
-    font-weight: 500;
+    display: block;        /* override the desktop “none” */
     position: fixed;
     bottom: 1rem;
     right: 1rem;
@@ -1708,8 +1710,14 @@ section#contact iframe {
     box-shadow: var(--shadow-md);
     animation: pulse 2s infinite;
     z-index: 1001;
-  } 
+
+    /* prevent any overflow if the viewport gets very narrow */
+    max-width: 90%;
+    box-sizing: border-box;
+  }
 }
+
+
 @keyframes fixed-mobile-cta {
     0% {
       box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7);
