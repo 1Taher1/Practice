@@ -1739,10 +1739,7 @@ section#contact iframe {
   background-color: var(--brand-color); /* Use your theme color */
   margin: 0.5rem auto; /* Center and add spacing */
 }
-body {
-  overflow-x: hidden;
-}
-.container {
-  width: 100%;
+html, body {
   max-width: 100%;
+  overflow-x: hidden;
 }
