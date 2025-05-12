@@ -376,89 +376,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   /**
-   * Initialize contact form submission
+   * Initialize contact form submission end khatam
    */
-  function initContactForm() {
-    const contactForm = document.getElementById('contact-form');
-    const toast = document.getElementById('toast');
-    const toastMessage = document.querySelector('.toast-message');
-    const toastClose = document.querySelector('.toast-close');
-    
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form fields
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const service = document.getElementById('service').value;
-        const message = document.getElementById('message').value;
-        
-        // Simple validation
-        if (!name || !email || !phone || !service || !message) {
-          showToast('Please fill in all fields', 'error');
-          return;
-        }
-        
-        // Email validation
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-          showToast('Please enter a valid email address', 'error');
-          return;
-        }
-        
-        // Simulate form submission (would be replaced with actual AJAX request)
-        const formData = {
-          name,
-          email,
-          phone,
-          service,
-          message
-        };
-        
-        console.log('Form submitted with data:', formData);
-        
-        // Show success message
-        showToast('Form submitted successfully! We\'ll get back to you shortly.', 'success');
-        
-        // Reset form
-        contactForm.reset();
-      });
-    }
-    
-    // Show toast notification
-    function showToast(message, type = 'success') {
-      toastMessage.textContent = message;
-      
-      // Set toast color based on type
-      if (type === 'error') {
-        toast.style.borderLeft = '4px solid #e53e3e';
-        toast.querySelector('.toast-icon i').className = 'fas fa-times-circle';
-      } else {
-        toast.style.borderLeft = '4px solid #2563eb';
-        toast.querySelector('.toast-icon i').className = 'fas fa-check-circle';
-      }
-      
-      // Show toast
-      toast.classList.add('show');
-      
-      // Auto-hide after 5 seconds
-      setTimeout(() => {
-        hideToast();
-      }, 5000);
-    }
-    
-    // Hide toast notification
-    function hideToast() {
-      toast.classList.remove('show');
-    }
-    
-    // Close toast on button click
-    if (toastClose) {
-      toastClose.addEventListener('click', hideToast);
-    }
-  }
+
+
+
   window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
